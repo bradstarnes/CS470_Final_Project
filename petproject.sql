@@ -58,7 +58,7 @@ we wouldn't have a bunch of nulls in the Pet table*/
 
 CREATE TABLE `Customer` (
 	`Customer_ID` 		INT NOT NULL AUTO_INCREMENT,
-	`SSN` 				INT UNIQUE,
+	`SSN` 				VARCHAR(9) UNIQUE,
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
 	PRIMARY KEY (`Customer_ID`)
@@ -68,7 +68,7 @@ CREATE TABLE `Employee` (
 	`Employee_ID` 		INT NOT NULL AUTO_INCREMENT,
 	`Address` 			VARCHAR(25),
 	`Salary` 			INT,
-	`SSN` 				INT UNIQUE,
+	`SSN` 				VARCHAR(9) UNIQUE,
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
 	PRIMARY KEY (`Employee_ID`)
@@ -89,7 +89,7 @@ CREATE TABLE `Pet_Volunteer` (
 CREATE TABLE `Volunteer` (
 	`Volunteer_ID` 		INT NOT NULL AUTO_INCREMENT,
 	`Supervisor_ID` 	INT, /* What employee supervies them*/
-	`SSN` 				INT UNIQUE,
+	`SSN` 				VARCHAR(9) UNIQUE,
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
 	`Address` 			VARCHAR(150) DEFAULT NULL,
