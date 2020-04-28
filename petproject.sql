@@ -66,7 +66,7 @@ CREATE TABLE `Customer` (
 
 CREATE TABLE `Employee` (
 	`Employee_ID` 		INT NOT NULL AUTO_INCREMENT,
-	`Address` 			VARCHAR(25),
+	`Address` 			VARCHAR(50),
 	`Salary` 			INT,
 	`SSN` 				VARCHAR(9) UNIQUE,
 	`F_Name` 			VARCHAR(25),
