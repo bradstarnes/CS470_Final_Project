@@ -73,7 +73,7 @@ CREATE TABLE `Employee` (
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
     CONSTRAINT `Salary_Positive` CHECK (Salary > 0),
-    CONSTRAINT `Valid_SSN` -- Makes sure ssn is valid input
+    CONSTRAINT `Employee_Valid_SSN` -- Makes sure ssn is valid input
 		CHECK (SSN LIKE '[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 	CONSTRAINT `Employee_PK` PRIMARY KEY (`Employee_ID`)
 ); 
@@ -97,7 +97,7 @@ CREATE TABLE `Volunteer` (
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
 	`Address` 			VARCHAR(150) DEFAULT NULL,
-    CONSTRAINT `Valid_SSN` -- Makes sure ssn is valid input
+    CONSTRAINT `Volunteer_Valid_SSN` -- Makes sure ssn is valid input
 		CHECK (SSN LIKE '[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 	CONSTRAINT `Volunteer_PK` PRIMARY KEY (`Volunteer_ID`)
 ); 
