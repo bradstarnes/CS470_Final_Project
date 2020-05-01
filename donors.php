@@ -1,16 +1,18 @@
 <html>
 <head>
-    <?php require_once('./includes/dbconnect.php'); ?>
     <?php include('header.php'); ?>
 
 </head>
 <body>
 
 <?php
+require_once('./includes/dbconnect.php');
 
 // Querying the table
-$sql_of_q1 = "SELECT * FROM Volunteer;";
+$sql_of_q1 = "SELECT * FROM Donor;";
 $q1result = mysqli_query($connection, $sql_of_q1);
+
+
 ?>
 
 
@@ -22,22 +24,22 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         <?php
         echo "<tr>";
         echo "<td>".'ID'."</td>";
-        echo "<td>".'Supervisor ID'."</td>";
-        echo "<td>".'SSN'."</td>";
-        echo "<td>".'First Name'."</td>";
-        echo "<td>".'Last Name'."</td>";
         echo "<td>".'Address'."</td>";
+        echo "<td>".'Salary'."</td>";
+        echo "<td>".'SSN'."</td>";
+        echo "<td>".'F_Name'."</td>";
+        echo "<td>".'L_Name'."</td>";
 
         echo "</tr>";
-        while($r = mysqli_fetch_assoc($q1result)) //fetches a result row as an associative array.
+        while($r = mysqli_fetch_assoc($sql)) //fetches a result row as an associative array.
         {
             echo "<tr>";
-            echo "<td>".$r['Volunteer_ID']."</td>";
-            echo "<td>".$r['Supervisor_ID']."</td>";
+            echo "<td>".$r['Employee_ID']."</td>";
+            echo "<td>".$r['Address']."</td>";
+            echo "<td>".$r['Salary']."</td>";
             echo "<td>".$r['SSN']."</td>";
             echo "<td>".$r['F_Name']."</td>";
             echo "<td>".$r['L_Name']."</td>";
-            echo "<td>".$r['Address']."</td>";
 
             echo "</tr>";
         }
