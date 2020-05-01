@@ -59,7 +59,7 @@ we wouldn't have a bunch of nulls in the Pet table*/
 
 CREATE TABLE `Customer` (
 	`Customer_ID` 		INT NOT NULL AUTO_INCREMENT,
-	`SSN` 				VARCHAR(9) UNIQUE NOT NULL,
+	`SSN` 				VARCHAR(15) UNIQUE NOT NULL,
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
 	CONSTRAINT `Customer_PK` PRIMARY KEY (`Customer_ID`)
@@ -74,7 +74,7 @@ CREATE TABLE `Employee` (
 	`L_Name` 			VARCHAR(25),
     CONSTRAINT `Salary_Positive` CHECK (Salary > 0),
     CONSTRAINT `Employee_Valid_SSN` -- Makes sure ssn is valid input
-		CHECK (SSN LIKE '[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+		CHECK (`SSN` regexp('^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$')),
 	CONSTRAINT `Employee_PK` PRIMARY KEY (`Employee_ID`)
 ); 
 
@@ -98,7 +98,7 @@ CREATE TABLE `Volunteer` (
 	`L_Name` 			VARCHAR(25),
 	`Address` 			VARCHAR(150) DEFAULT NULL,
     CONSTRAINT `Volunteer_Valid_SSN` -- Makes sure ssn is valid input
-		CHECK (SSN LIKE '[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+		CHECK (`SSN` regexp('^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$')),
 	CONSTRAINT `Volunteer_PK` PRIMARY KEY (`Volunteer_ID`)
 ); 
 
