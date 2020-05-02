@@ -150,8 +150,6 @@ VALUES
     ('309544556', 'Lauren', 'Cortez'),
     ('251487531', 'Gregory', 'Hopkins');
 
-/** INSERT EMPLOYEE DATA **/
-
 INSERT INTO
 	Employee(F_name, L_name, SSN, Address, Salary)
     VALUES
@@ -180,8 +178,6 @@ INSERT INTO
     ('Boyd', 'Maxwell', '401294052', '1 South Lyme Rd., Shawnee, KS 17543', 82000),
     ('Tony', 'Freeman', '216240720', '9612 Stillwater Lane, Shawnee, KS 17543', 82000),
     ('Austin', 'Collier', '143217657', '58 Heather St., Shawnee, KS 17543', 65000);
-
-/** INSERT VOLUNTEER DATA **/
 
 INSERT INTO
 	Volunteer(F_Name, L_Name, SSN, Address, Supervisor_ID)
@@ -213,33 +209,33 @@ INSERT INTO
     ('Marty', 'Alvarez', '681147158', '8 Grand Dr., Easley, KS 29640', 8);
     
     
-    /* Donor Table */
+        /* Donor Table */
     
-    INSERT INTO DONOR(F_Name, L_Name, Company_Name, Donation_Total, Donor_Type, Employee_ID)
+    INSERT INTO DONOR(F_Name, L_Name, Company_Name, Donor_Type, Employee_ID)
 VALUES 
-("Jonah", "Hill", " ", 20000, "Personal", 5), 
-("Robert", "Evans", " ", 15000, "Personal", 1), 
-("Chris", "Hogan", " ", 17550, "Personal", 6), 
-("Simon", "Riley", "ABC Solutions", 75000, "Corporate", 4), 
-("John", "Price", " ", 14100, "Personal", 7), 
-("Carl", "Johnson", " ", 2000, "Personal", 2), 
-("Maria", "Hill", "Amazon", 80000, "Corporate", 3), 
-("Nick", "Cage", " ", 22000, "Personal", 8), 
-("Claire", "Redfield", " ", 1500, "Personal", 9), 
-("Carlos", "Olievera", " ", 3000, "Personal", 2), 
-("Alexander", "Issacs", "Umbrella Pvt. Ltd.", 70000, "Corporate", 5), 
-("Jill", "Valentine", " ", 7000, "Personal", 6), 
-("Clay", "Jensen", " ", 1000, "Personal", 7), 
-("Ada", "Wong", " ", 1950, "Personal", 3), 
-("Carol", "Lockne", " ", 5000, "Personal", 8), 
-("Sam", "Porter", "Bridge", 60000, "Corporate", 1), 
-("Joel", "Baker", " ", 7000, "Personal", 2), 
-("Ashley", "Johnson", " ", 12000, "Personal", 4), 
-("Cisco", "Ramon", "Star Labs ", 50000, "Corporate", 7), 
-("Barry", "Allen", "Zoom", 30000, "Corporate", 9), 
-("Rey", "Walker", "Imperial", 80000, "Corporate", 1), 
-("Alex", "Jones", " ", 23000, "Personal", 2), 
-("Tom", "Parker", " ", 2000, "Personal", 6); 
+("Jonah", "Hill", " ", "Personal", 5), 
+("Robert", "Evans", " ", "Personal", 1), 
+("Chris", "Hogan", " ", "Personal", 6), 
+("Simon", "Riley", "ABC Solutions", "Corporate", 4), 
+("John", "Price", " ", "Personal", 7), 
+("Carl", "Johnson", " ", "Personal", 2), 
+("Maria", "Hill", "Amazon", "Corporate", 3), 
+("Nick", "Cage", " ", "Personal", 8), 
+("Claire", "Redfield", " ", "Personal", 9), 
+("Carlos", "Olievera", " ", "Personal", 2), 
+("Alexander", "Issacs", "Umbrella Pvt. Ltd.", "Corporate", 5), 
+("Jill", "Valentine", " ", "Personal", 6), 
+("Clay", "Jensen", " ", "Personal", 7), 
+("Ada", "Wong", " ", "Personal", 3), 
+("Carol", "Lockne", " ", "Personal", 8), 
+("Sam", "Porter", "Bridge", "Corporate", 1), 
+("Joel", "Baker", " ", "Personal", 2), 
+("Ashley", "Johnson", " ", "Personal", 4), 
+("Cisco", "Ramon", "Star Labs ", "Corporate", 7), 
+("Barry", "Allen", "Zoom", "Corporate", 9), 
+("Rey", "Walker", "Imperial", "Corporate", 1), 
+("Alex", "Jones", " ", "Personal", 2), 
+("Tom", "Parker", " ", "Personal", 6); 
 
 
 /*Donor Contact Table*/
