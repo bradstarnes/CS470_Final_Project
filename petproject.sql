@@ -168,3 +168,16 @@ BEGIN
 	END IF;
 END//
 DELIMITER ;
+#Should not allow insertion of care where
+#date is later than the current date
+DELIMITER //
+CREATE TRIGGER Valid_Pet_Volunteer_Date_Check
+BEFORE INSERT ON Pet_Volunteer
+FOR EACH ROW
+BEGIN
+	IF NEW.Date > CURRENT_DATE()
+	THEN 
+		SET NEW.Date = NULL ;
+	END IF;
+END//
+DELIMITER ;
