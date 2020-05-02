@@ -14,10 +14,12 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 ?>
 
 
+<h1>Adoptable Pets</h1>
 
-<div style="margin-right: 100px">
+<div class="tableOutput" style="margin-right: 100px">
+
+    <h3>A list of our Available Cats can be found here</h3>
     <table border="1">
-
 
         <?php
         echo "<tr>";
@@ -49,6 +51,27 @@ $q1result = mysqli_query($connection, $sql_of_q1);
     </table>
 </div>
 
+
+<div class="newdataform">
+    <h3>Add a New Cat</h3>
+    <form action="newpet.php" method="post">
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Breed: <input type="text" name="breed" /></p>
+        <p>Gender: <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select></p>
+        <p>Type: <select id="type" name="type">
+                <option value="Dog" disabled>Dog</option>
+                <option value="Cat">Cat</option>
+            </select></p>
+
+        <p>Date Arrived: <input type="text" name="date" /></p>
+        <p>Image URL: <input type="text" name="image" /></p>
+
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+</div>
 
 <?php if (mysqli_close($connection))echo ""; ?>
 </body

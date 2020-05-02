@@ -54,41 +54,21 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 
 <div class="newdataform">
     <h3>Add a New Dog</h3>
-    <form action="newdonor.php" method="post">
-        <p>First name: <input type="text" name="f_name" /></p>
-        <p>Last name: <input type="text" name="l_name" /></p>
-        <p>Company Name: <input type="text" name="company_name" /></p>
-
-        <p>Employee Connection:<select id="employee_ID" name="employee_ID">
-                <?php
-                $sql = mysqli_query($connection, "SELECT F_Name, L_Name, Employee_ID FROM employee");
-                while ($row = $sql->fetch_assoc()){
-                    echo "<option value='employee_ID'>" . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
-                }
-                ?>
+    <form action="newpet.php" method="post">
+        <p>Name: <input type="text" name="name" /></p>
+        <p>Breed: <input type="text" name="breed" /></p>
+        <p>Gender: <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select></p>
+        <p>Type: <select id="type" name="type">
+                <option value="Dog">Dog</option>
+                <option value="Cat" disabled>Cat</option>
             </select></p>
 
-        <p>Donor Type: <select id="donor_Type" name="donor_Type">
-                <option value="Personal">Personal</option>
-                <option value="Corporate">Corporate</option>
-            </select></p>
-        <input type="submit" name="submit" value="Submit" />
-    </form>
+        <p>Date Arrived: <input type="text" name="date" /></p>
+        <p>Image URL: <input type="text" name="image" /></p>
 
-    <h3>Add a New Donation</h3>
-    <form action="newdonation.php" method="post">
-        <p>Donation Date: <input type="date" name="donation_date" /></p>
-
-        <p>Donor:<select id="donor_ID" name="donor_ID">
-                <?php
-                $sql = mysqli_query($connection, "SELECT Donor_ID, F_Name, L_Name FROM Donor");
-                while ($row = $sql->fetch_assoc()){
-                    echo "<option value='Donor.Donor_ID'>" . $row['Donor_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
-                }
-                ?>
-            </select></p>
-
-        <p>Amount: <input type="number" name="donation_amount" /></p>
         <input type="submit" name="submit" value="Submit" />
     </form>
 </div>
