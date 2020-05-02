@@ -7,7 +7,6 @@ USE CS470RUNTIMETERROR;
 /** CREATE TABLES **/
 CREATE TABLE `Donor` (
 	`Donor_ID` 			INT NOT NULL AUTO_INCREMENT,
-	`Donation_Total` 	INT,
 	`Donor_Type` 		VARCHAR(25),
 	`Employee_ID` 		INT,
 	`F_Name` 			VARCHAR(25),
@@ -59,9 +58,11 @@ we wouldn't have a bunch of nulls in the Pet table*/
 
 CREATE TABLE `Customer` (
 	`Customer_ID` 		INT NOT NULL AUTO_INCREMENT,
-	`SSN` 				VARCHAR(15) UNIQUE NOT NULL,
+	`SSN` 				VARCHAR(9) UNIQUE NOT NULL,
 	`F_Name` 			VARCHAR(25),
 	`L_Name` 			VARCHAR(25),
+    CONSTRAINT `Customer_Valid_SSN` -- Makes sure ssn is valid input
+		CHECK (`SSN` regexp('^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$')),
 	CONSTRAINT `Customer_PK` PRIMARY KEY (`Customer_ID`)
 ); 
 
