@@ -1,47 +1,15 @@
 <!--#Used source code for HTML and CSS https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black_active-->
-<style>
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    }
-
-    li {
-        float: left;
-    }
-
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover:not(.active) {
-        background-color: #111;
-    }
-
-    .active {
-        background-color: #4CAF50;
-    }
-
-    img {
-        width: 250px;
-        height: 350px;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <ul>
-    <li><a href="index.php">Home</li>
-    <li><a href="donors.php">Donors</li>
-    <li><a href="customers.php">Customers</li>
-    <li><a href="volunteers.php">Volunteers</li>
-    <li><a href="employees.php">Employees</li>
-    <li><a href="dogs.php">Dogs</li>
-    <li><a href="cats.php">Cats</li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="donors.php">Donors</a></li>
+    <li><a href="customers.php">Customers</a></li>
+    <li><a href="volunteers.php">Volunteers</a></li>
+    <li><a href="employees.php">Employees</a></li>
+    <li><a href="dogs.php">Dogs</a></li>
+    <li><a href="cats.php">Cats</a></li>
+
 </ul>
 
 

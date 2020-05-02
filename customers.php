@@ -1,6 +1,7 @@
 <html>
 <head>
     <?php include('header.php'); ?>
+    <link rel="stylesheet" type="text/css" href="table.css">
 
 </head>
 <body>
@@ -17,8 +18,8 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 
 
 
-<div style="margin-right: 100px">
-    <table border="1">
+<div id=shelterTable" style="margin-right: 100px">
+    <table id=shelterTable" border="1">
 
 
         <?php
@@ -39,8 +40,6 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 
 
         ?>
-
-
     </table>
 </div>
 
