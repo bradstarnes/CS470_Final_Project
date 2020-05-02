@@ -162,9 +162,9 @@ CREATE TRIGGER Valid_Donation_Date_Check
 BEFORE INSERT ON Donations
 FOR EACH ROW
 BEGIN
-	IF NEW.Date > CURRENT_DATE()
+	IF NEW.Donation_Date > CURRENT_DATE()
 	THEN 
-		SET NEW.Date = NULL ;
+		SET NEW.Donation_Date = NULL ;
 	END IF;
 END//
 DELIMITER ;
