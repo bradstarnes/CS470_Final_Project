@@ -150,6 +150,8 @@ VALUES
     ('309544556', 'Lauren', 'Cortez'),
     ('251487531', 'Gregory', 'Hopkins');
 
+/** INSERT EMPLOYEE DATA **/
+
 INSERT INTO
 	Employee(F_name, L_name, SSN, Address, Salary)
     VALUES
@@ -178,6 +180,8 @@ INSERT INTO
     ('Boyd', 'Maxwell', '401294052', '1 South Lyme Rd., Shawnee, KS 17543', 82000),
     ('Tony', 'Freeman', '216240720', '9612 Stillwater Lane, Shawnee, KS 17543', 82000),
     ('Austin', 'Collier', '143217657', '58 Heather St., Shawnee, KS 17543', 65000);
+    
+/** INSERT VOLUNTEER DATA **/
 
 INSERT INTO
 	Volunteer(F_Name, L_Name, SSN, Address, Supervisor_ID)
@@ -207,7 +211,35 @@ INSERT INTO
     ('Jake', 'Bush', '659144700', '234 Piper Street, Grandview, MO 32703', 24),
     ('Rodolfo', 'Munoz', '029462050', '40 South Warren Ave., Easley, KS 29640', 8),
     ('Marty', 'Alvarez', '681147158', '8 Grand Dr., Easley, KS 29640', 8);
-    
+
+/** INSERT PET_CUSTOMER DATA **/
+INSERT INTO Pet_Customer(Pet_ID, Customer_ID, Adoption_Date)
+	VALUES
+    (41, 10, '2019-12-14'),
+    (35, 44, '2020-02-10'),
+    (14, 24, '2017-10-29'),
+    (11, 20, '2019-01-12'),
+    (20, 19, '2020-03-02'),
+    (37, 13, '2020-01-19'),
+    (38, 46, '2019-12-30'),
+    (22, 24, '2018-09-22'),
+    (30, 9, '2020-03-04'),
+    (3, 23, '2020-04-29'),
+    (8, 41, '2020-03-24'),
+    (24, 21, '2015-12-22'),
+    (27, 1, '2020-04-01'),
+    (4, 22, '2020-05-01'),
+    (7, 10, '2020-04-28'),
+    (43, 40, '2017-08-02'),
+    (21, 29, '2018-07-01'),
+    (23, 24, '2016-09-16'),
+    (40, 19, '2019-11-13'),
+    (42, 13, '2016-07-11'),
+    (16, 25, '2016-11-05'),
+    (5, 48, '2020-04-30'),
+    (32, 43, '2020-01-03'),
+    (36, 16, '2019-08-20'),
+    (13, 15, '2015-09-12');
     
         /* Donor Table */
     
