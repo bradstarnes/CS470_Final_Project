@@ -9,7 +9,7 @@
 <?php
 
 // Querying the table
-$sql_of_q1 = "SELECT Donor.Donor_ID, FORMAT(SUM(donations.Amount), 0) AS Donation_Total, Donor_Type, Employee_ID, F_Name, L_Name, Company_Name FROM donor INNER JOIN `donations` ON `donations` . `Donor_ID` = `donor`. `Donor_ID`GROUP BY Donor.Donor_ID;";
+$sql_of_q1 = "SELECT Donor.Donor_ID, FORMAT(SUM(donations.Amount), 0) AS Donation_Total, Donor_Type, Employee_ID, F_Name, L_Name, Company_Name FROM Donor INNER JOIN `donations` ON `donations` . `Donor_ID` = `donor`. `Donor_ID`GROUP BY Donor.Donor_ID;";
 $q1result = mysqli_query($connection, $sql_of_q1);
 
 
