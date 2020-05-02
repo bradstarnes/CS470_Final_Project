@@ -14,11 +14,11 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 ?>
 
 
+<h1>Volunteers</h1>
+<div class="tableOutput" style="margin-right: 100px">
+    <h3>A list of our Volunteers can be found here</h3>
 
-<div style="margin-right: 100px">
     <table border="1">
-
-
         <?php
         echo "<tr>";
         echo "<td>".'ID'."</td>";
@@ -48,7 +48,25 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 
     </table>
 </div>
+<div class="newdataform">
+    <h3>Add a New Volunteer</h3>
+    <form action="newdonor.php" method="post">
+        <p>First name: <input type="text" name="f_name" /></p>
+        <p>Last name: <input type="text" name="l_name" /></p>
+        <p>Company Name: <input type="text" name="company_name" /></p>
+        <p>Employee Connection: <input type="text" name="employee_ID" /></p>
+        <p>Donor Type: <input type="text" name="donor_Type" /></p>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
 
+    <h3>Add a New Donation</h3>
+    <form action="newdonation.php" method="post">
+        <p>Donation Date: <input type="date" name="donation_date" /></p>
+        <p>Donor ID (Choose from Table to Left): <input type="text" name="donor_ID" /></p>
+        <p>Amount: <input type="text" name="donation_amount" /></p>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+</div>
 
 <?php if (mysqli_close($connection))echo ""; ?>
 </body

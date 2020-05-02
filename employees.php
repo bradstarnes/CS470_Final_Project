@@ -9,7 +9,7 @@
 require_once('./includes/dbconnect.php');
 
 // Querying the table
-$sql_of_q1 = "SELECT * FROM Volunteer;";
+$sql_of_q1 = "SELECT * FROM Employee;";
 $q1result = mysqli_query($connection, $sql_of_q1);
 
 echo ("SQL STUFF". $sql);
