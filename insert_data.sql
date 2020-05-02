@@ -150,8 +150,6 @@ VALUES
     ('309544556', 'Lauren', 'Cortez'),
     ('251487531', 'Gregory', 'Hopkins');
 
-/** INSERT EMPLOYEE DATA **/
-
 INSERT INTO
 	Employee(F_name, L_name, SSN, Address, Salary)
     VALUES
@@ -181,8 +179,6 @@ INSERT INTO
     ('Tony', 'Freeman', '216240720', '9612 Stillwater Lane, Shawnee, KS 17543', 82000),
     ('Austin', 'Collier', '143217657', '58 Heather St., Shawnee, KS 17543', 65000);
 
-/** INSERT VOLUNTEER DATA **/
-
 INSERT INTO
 	Volunteer(F_Name, L_Name, SSN, Address, Supervisor_ID)
     VALUES
@@ -211,3 +207,61 @@ INSERT INTO
     ('Jake', 'Bush', '659144700', '234 Piper Street, Grandview, MO 32703', 24),
     ('Rodolfo', 'Munoz', '029462050', '40 South Warren Ave., Easley, KS 29640', 8),
     ('Marty', 'Alvarez', '681147158', '8 Grand Dr., Easley, KS 29640', 8);
+    
+    
+        /* Donor Table */
+    
+    INSERT INTO DONOR(F_Name, L_Name, Company_Name, Donor_Type, Employee_ID)
+VALUES 
+("Jonah", "Hill", " ", "Personal", 5), 
+("Robert", "Evans", " ", "Personal", 1), 
+("Chris", "Hogan", " ", "Personal", 6), 
+("Simon", "Riley", "ABC Solutions", "Corporate", 4), 
+("John", "Price", " ", "Personal", 7), 
+("Carl", "Johnson", " ", "Personal", 2), 
+("Maria", "Hill", "Amazon", "Corporate", 3), 
+("Nick", "Cage", " ", "Personal", 8), 
+("Claire", "Redfield", " ", "Personal", 9), 
+("Carlos", "Olievera", " ", "Personal", 2), 
+("Alexander", "Issacs", "Umbrella Pvt. Ltd.", "Corporate", 5), 
+("Jill", "Valentine", " ", "Personal", 6), 
+("Clay", "Jensen", " ", "Personal", 7), 
+("Ada", "Wong", " ", "Personal", 3), 
+("Carol", "Lockne", " ", "Personal", 8), 
+("Sam", "Porter", "Bridge", "Corporate", 1), 
+("Joel", "Baker", " ", "Personal", 2), 
+("Ashley", "Johnson", " ", "Personal", 4), 
+("Cisco", "Ramon", "Star Labs ", "Corporate", 7), 
+("Barry", "Allen", "Zoom", "Corporate", 9), 
+("Rey", "Walker", "Imperial", "Corporate", 1), 
+("Alex", "Jones", " ", "Personal", 2), 
+("Tom", "Parker", " ", "Personal", 6); 
+
+
+/*Donor Contact Table*/
+
+INSERT INTO Donor_Contact(Donor_ID, Email_Address, Primary_Phone, Secondary_Phone, Address)
+VALUES
+(1, "jonah.hill@gmail.com", "816-444-2583", " ", "112 3rd Ave, MO 44302"),
+(2, "robert.evans12@gmail.com", "816-755-2523", " ", "17 Kingsway, MO 63442"),
+(3, "chrishogan7@gmail.com", "816-746-1173", " ", "2352 Clyde st, KS 29460"),
+(4, "simonriley@abcsols.com", "718-236-2533", "718-233-7895 ", "141 IF Ward, NY 10021"),
+(5, "john.price@gmail.com", "816-141-2253", " ", "106 Smith St, MO 64953"),
+(6, "carljohnson77@gmail.com", "816-444-1113", " ", "26 Central Blvd, MO 64322"),
+(7, "mari8hill@ymail.com", "711-459-3648", "718-654-7895", "655 Bourne RD, WA 64822"),
+(8, "nicholascage56@gmail.com", "157-326-1586", " ", "45 7th Ave, MO 68618"),
+(9, "clairerf@gmail.com", "778-668-3563", " ", "5841 Case st, MO 44892"),
+(10, "carlolv@gmail.com", "888-226-7455", " ", "3627 5th Ave, MO 43652"),
+(11, "alexissac@umbrella.com", "366-663-8156", "366-663-8469", "221 Gillham Rd, CA 64799"),
+(12, "jvalentine65@gmail.com", "486-123-9943", " ", "4582 Nissan Ave, KS 77895"),
+(13, "clayj788@gmail.com", "352-586-2642", " ", "552 Main st, KS 78522"),
+(14, "wong.ada@mail.com", "589-564-7851", " ", "512 6th Ave, GA 88972"),
+(15, "caroll@gmail.com", "583-866-2123", " ", "12 Main st, KS 59642"),
+(16, "samporter22@bridge.com", "765-782-5683", "765-782-6354", "33 13th ave, NJ 57996"),
+(17, "joelbaker@gmail.com", "788-543-2114", " ", "3627 Epp St, MO 64358"),
+(18, "ashjohnson33@mail.com", "899-835-2783", " ", "121 Grandview, NY 10029"),
+(19, "cicramon@star.com", "546-885-2525", "546-885-1315", "488 , CA 11502"),
+(20, "allenbarr@zoom.com", "568-223-7586", "568-223-4731", "112 Main St, CA 11002"),
+(21, "reyw99@imp.com", "456-778-2583", "456-778-8596", "38 Mills, NY 10023"),
+(22, "alexj784@mail.com", "266-799-2113", " ", "45 Mills St, MO 54232"),
+(23, "tparker16@gmail.com", "886-616-1114", " ", "34 Grand Ave, NY 89792");
