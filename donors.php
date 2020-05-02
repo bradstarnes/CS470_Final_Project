@@ -13,9 +13,13 @@ $sql_of_q1 = "SELECT Donor.Donor_ID, FORMAT(SUM(donations.Amount), 0) AS Donatio
 $q1result = mysqli_query($connection, $sql_of_q1);
 
 
+$sql_of_q2 = "SELECT Donation_Date, Donor_ID, Amount FROM Donations;";
+$q12esult = mysqli_query($connection, $sql_of_q2);
+
+
 ?>
 
-
+<div class="row">
 <h1>Donors</h1>
 <div class="tableOutput" style="margin-right: 100px">
     <h3>A list of our Donors can be found here</h3>
@@ -66,7 +70,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
             <?php
         $sql = mysqli_query($connection, "SELECT F_Name, L_Name, Employee_ID FROM employee");
         while ($row = $sql->fetch_assoc()){
-            echo "<option value='employee_ID'>" . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
+            echo "<option value='" . $row['Employee_ID'] . "'>" . $row['Employee_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
         }
         ?>
             </select></p>
@@ -77,16 +81,50 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         </select></p>
         <input type="submit" name="submit" value="Submit" />
     </form>
+</div>
+</div>
 
+
+
+
+<div class="row">
+    <div class="tableOutput" style="margin-right: 100px">
+        <h3>A list of our Donations can be found here</h3>
+        <table border="1">
+
+
+            <?php
+            echo "<tr>";
+            echo "<td>".'Total ($)'."</td>";
+            echo "<td>".'Donor_ID'."</td>";
+            echo "<td>".'Date '."</td>";
+
+            echo "</tr>";
+            while($r = mysqli_fetch_assoc($q12esult)) //fetches a result row as an associative array.
+            {
+                echo "<tr>";
+                echo "<td>".$r['Amount']."</td>";
+                echo "<td>".$r['Donor_ID']."</td>";
+                echo "<td>".$r['Donation_Date']."</td>";
+                echo "</tr>";
+            }
+
+
+            ?>
+
+
+        </table>
+    </div>
+<div class="newdataform">
     <h3>Add a New Donation</h3>
     <form action="newdonation.php" method="post">
-        <p>Donation Date: <input type="date" name="donation_date" /></p>
+        <p>Donation Date: <input type="text" name="donation_date" /></p>
 
         <p>Donor:<select id="donor_ID" name="donor_ID">
                 <?php
                 $sql = mysqli_query($connection, "SELECT Donor_ID, F_Name, L_Name FROM Donor");
                 while ($row = $sql->fetch_assoc()){
-                    echo "<option value='Donor.Donor_ID'>" . $row['Donor_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
+                    echo "<option value='" . $row['Donor_ID'] . "'>" . $row['Donor_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
                 }
                 ?>
             </select></p>
@@ -94,6 +132,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         <p>Amount: <input type="number" name="donation_amount" /></p>
         <input type="submit" name="submit" value="Submit" />
     </form>
+</div>
 </div>
 
 <?php if (mysqli_close($connection))echo ""; ?>

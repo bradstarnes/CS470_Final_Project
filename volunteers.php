@@ -50,20 +50,19 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 </div>
 <div class="newdataform">
     <h3>Add a New Volunteer</h3>
-    <form action="newdonor.php" method="post">
+    <form action="newvolunteer.php" method="post">
         <p>First name: <input type="text" name="f_name" /></p>
         <p>Last name: <input type="text" name="l_name" /></p>
-        <p>Company Name: <input type="text" name="company_name" /></p>
-        <p>Employee Connection: <input type="text" name="employee_ID" /></p>
-        <p>Donor Type: <input type="text" name="donor_Type" /></p>
-        <input type="submit" name="submit" value="Submit" />
-    </form>
-
-    <h3>Add a New Donation</h3>
-    <form action="newdonation.php" method="post">
-        <p>Donation Date: <input type="date" name="donation_date" /></p>
-        <p>Donor ID (Choose from Table to Left): <input type="text" name="donor_ID" /></p>
-        <p>Amount: <input type="text" name="donation_amount" /></p>
+        <p>SSN: <input type="text" name="ssn" /></p>
+        <p>Address: <input type="text" name="address" /></p>
+        <p>Employee Supervisor:<select id="employee_ID" name="employee_ID">
+                <?php
+                $sql = mysqli_query($connection, "SELECT F_Name, L_Name, Employee_ID FROM employee");
+                while ($row = $sql->fetch_assoc()){
+                    echo "<option value='" . $row['Employee_ID'] . "'>" . $row['Employee_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
+                }
+                ?>
+            </select></p>
         <input type="submit" name="submit" value="Submit" />
     </form>
 </div>
