@@ -1,12 +1,12 @@
 <html>
 <head>
-    <?php require_once('./includes/dbconnect.php'); ?>
     <?php include('header.php'); ?>
 
 </head>
 <body>
 
 <?php
+require_once('./includes/dbconnect.php');
 
 // Querying the table
 $sql_of_q1 = "SELECT * FROM cs470_hw6.customer;";

@@ -8,7 +8,7 @@
 <?php
 require_once('./includes/dbconnect.php');
 // Querying the table
-$sql_of_q1 = "SELECT * FROM Pet;";
+$sql_of_q1 = "SELECT Image_URL, Date_Arrived, Time_In_Shelter, Breed, Name, Gender FROM Pet WHERE Type = 'Dog';";
 $q1result = mysqli_query($connection, $sql_of_q1);
 
 ?>
@@ -23,6 +23,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         echo "<tr>";
         echo "<td>".'Photo'."</td>";
         echo "<td>".'Date Arrived'."</td>";
+        echo "<td>".'Time In Shelter'."</td>";
         echo "<td>".'Breed'."</td>";
         echo "<td>".'Name'."</td>";
         echo "<td>".'Gender'."</td>";
@@ -33,6 +34,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
             echo "<tr>";
             echo "<td>"."<img src='".$r['Image_URL']. "' alt='petImage'>"."</td>";
             echo "<td>".$r['Date_Arrived']."</td>";
+            echo "<td>".$r['Time_In_Shelter']."</td>";
             echo "<td>".$r['Breed']."</td>";
             echo "<td>".$r['Name']."</td>";
             echo "<td>".$r['Gender']."</td>";
