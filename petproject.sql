@@ -20,7 +20,7 @@ Would have a lot of repeated Employee_IDs*/
 
 CREATE TABLE `Donations` (
 	`Donation_ID` 		INT NOT NULL AUTO_INCREMENT,
-	`Donation_Date` 	DATE,
+	`Donation_Date` 	DATE NOT NULL,
 	`Donor_ID` 			INT,
 	`Amount` 			INT,
 	CONSTRAINT `Donations_PK` PRIMARY KEY (`Donation_ID`)
@@ -127,3 +127,44 @@ ALTER TABLE Pet_Volunteer ADD CONSTRAINT Pet_Volunteer_Volunteer_ID_FK
 ALTER TABLE Volunteer ADD CONSTRAINT Volunteer_Supervisor_ID_FK
 	FOREIGN KEY (Supervisor_ID) REFERENCES Employee(Employee_ID); -- foreign key constraint
     
+#Should not allow pets to be adopted later
+#than the current date
+DELIMITER //
+CREATE TRIGGER Valid_Adoption_Date_Check
+BEFORE INSERT ON pet_customer 
+FOR EACH ROW
+BEGIN
+	IF NEW.Adoption_Date > CURRENT_DATE()
+	THEN 
+		SET NEW.Adoption_Date = NULL ;
+	END IF;
+END//
+DELIMITER ;
+
+#Should not allow insertion of pets whose
+#arrival date is later than the current date
+DELIMITER //
+CREATE TRIGGER Valid_Date_Arrived_Check
+BEFORE INSERT ON pet 
+FOR EACH ROW
+BEGIN
+	IF NEW.Date_Arrived > CURRENT_DATE()
+	THEN 
+		SET NEW.Date_Arrived = NULL ;
+	END IF;
+END//
+DELIMITER ;
+
+#Should not allow insertion of donations whose
+#date is later than the current date
+DELIMITER //
+CREATE TRIGGER Valid_Donation_Date_Check
+BEFORE INSERT ON Donations
+FOR EACH ROW
+BEGIN
+	IF NEW.Date > CURRENT_DATE()
+	THEN 
+		SET NEW.Date = NULL ;
+	END IF;
+END//
+DELIMITER ;
