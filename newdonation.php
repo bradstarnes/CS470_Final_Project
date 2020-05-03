@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) //check if the submit button is pressed (T or F)
 
     // Image validation
     $x = 0;
-    $sql5 = "INSERT INTO donations (Donation_Date,Donor_ID,Amount) VALUES ('$donation_date', '$donor_ID', '$donation_amount')";
+    $sql5 = "INSERT INTO Donations (Donation_Date,Donor_ID,Amount) VALUES ('$donation_date', '$donor_ID', '$donation_amount')";
     if (mysqli_query($connection, $sql5))
     {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
