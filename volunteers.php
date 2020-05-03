@@ -57,7 +57,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         <p>Address: <input type="text" name="address" /></p>
         <p>Employee Supervisor:<select id="employee_ID" name="employee_ID">
                 <?php
-                $sql = mysqli_query($connection, "SELECT F_Name, L_Name, Employee_ID FROM employee");
+                $sql = mysqli_query($connection, "SELECT F_Name, L_Name, Employee_ID FROM Employee");
                 while ($row = $sql->fetch_assoc()){
                     echo "<option value='" . $row['Employee_ID'] . "'>" . $row['Employee_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
                 }

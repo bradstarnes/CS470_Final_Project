@@ -23,7 +23,7 @@
         <?php
         require_once('./includes/dbconnect.php');
         // Querying the table
-        $sql_of_q1 = "SELECT Image_URL, Date_Arrived, ROUND(DATEDIFF(Date_Arrived, NOW())/-1, 0) as Time_In_Shelter, Breed, Name, Gender FROM Pet ORDER BY DATE_ARRIVED ASC LIMIT 1;";
+        $sql_of_q1 = "SELECT Pet_ID, Image_URL, Date_Arrived, ROUND(DATEDIFF(Date_Arrived, NOW())/-1, 0) as Time_In_Shelter, Breed, Name, Gender FROM Pet WHERE NOT EXISTS ( SELECT * FROM Pet_Customer WHERE Pet_Customer.Pet_ID = Pet.Pet_ID) ORDER BY DATE_ARRIVED ASC LIMIT 1";
         $q1result = mysqli_query($connection, $sql_of_q1);
 
         ?>
