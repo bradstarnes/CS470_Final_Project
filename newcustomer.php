@@ -13,17 +13,17 @@ if(isset($_POST['submit'])) //check if the submit button is pressed (T or F)
 
     // Image validation
     $x = 0;
-    $sql5 = "INSERT INTO customer (F_Name,L_Name,SSN) VALUES ('$first_name', '$last_name', '$ssn')";
+    $sql5 = "INSERT INTO Customer (F_Name,L_Name,SSN) VALUES ('$first_name', '$last_name', '$ssn')";
     if (mysqli_query($connection, $sql5))
     {
         echo "<br>"; echo "Thank you ... Your info uploaded successfully ! You wil be redirected here in 5 seconds. ";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 
     }
     else{
         echo "<br>"; echo "Error: " . $sql5 . "<br>" . mysqli_error($connection);
     }
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 // close connection
