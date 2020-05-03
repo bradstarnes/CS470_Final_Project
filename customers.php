@@ -10,7 +10,7 @@
 require_once('./includes/dbconnect.php');
 
 // Querying the table
-$sql_of_q1 = "SELECT SSN, F_Name, L_Name, Pet_Customer.Pet_ID AS Adopted_Pet, Pet_Customer.Adoption_Date AS Adoption_Date, Customer.Customer_ID FROM Customer 	LEFT JOIN `Pet_Customer` ON `Pet_Customer`.`Customer_ID` = `Customer`.`Customer_ID`;";
+$sql_of_q1 = "SELECT  F_Name, L_Name, Pet_Customer.Pet_ID AS Adopted_Pet, Pet_Customer.Adoption_Date AS Adoption_Date, Customer.Customer_ID FROM Customer 	LEFT JOIN `Pet_Customer` ON `Pet_Customer`.`Customer_ID` = `Customer`.`Customer_ID`;";
 $q1result = mysqli_query($connection, $sql_of_q1);
 
 
@@ -25,7 +25,6 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         <?php
         echo "<tr>";
         echo "<td>".'ID'."</td>";
-        echo "<td>".'SSN'."</td>";
         echo "<td>".'First Name'."</td>";
         echo "<td>".'Last Name'."</td>";
         echo "<td>".'Adoption ID'."</td>";
@@ -36,7 +35,6 @@ $q1result = mysqli_query($connection, $sql_of_q1);
         {
             echo "<tr>";
             echo "<td>".$r['Customer_ID']."</td>";
-            echo "<td>".$r['SSN']."</td>";
             echo "<td>".$r['F_Name']."</td>";
             echo "<td>".$r['L_Name']."</td>";
             echo "<td>".$r['Adopted_Pet']."</td>";
