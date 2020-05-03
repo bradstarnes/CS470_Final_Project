@@ -11,6 +11,8 @@
     <li><a href="employees.php">Employees</a></li>
     <li><a href="dogs.php">Dogs</a></li>
     <li><a href="cats.php">Cats</a></li>
+    <li><a href="adoptionrecords.php">Adoption Records</a></li>
+
 
 </ul>
 
