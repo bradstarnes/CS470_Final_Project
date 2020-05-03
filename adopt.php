@@ -6,9 +6,20 @@
 
 <?php
 require_once('./includes/dbconnect.php');
+
+
+
+
 // Querying the table
-$sql_of_q1 = "SELECT Image_URL, Date_Arrived, ROUND(DATEDIFF(Date_Arrived, NOW())/-1, 0) as Time_In_Shelter, Breed, Name, Gender FROM Pet WHERE Type = 'Dog';";
+$sql_of_q1 = "SELECT Image_URL, Date_Arrived, ROUND(DATEDIFF(Date_Arrived, NOW())/-1, 0)
+    as Time_In_Shelter, Breed, Name, Gender FROM Pet WHERE Type = 'Dog';";
+
+
+
 $q1result = mysqli_query($connection, $sql_of_q1);
+
+
+
 
 ?>
 
@@ -24,12 +35,14 @@ $q1result = mysqli_query($connection, $sql_of_q1);
                 while ($row = $sql->fetch_assoc()){
                     echo "<option value='" . $row['Customer_ID'] . "'>" . $row['Customer_ID'] . " " . $row['F_Name'] . ' '.  $row['L_Name'] . "</option>";
                 }
+
                 ?>
             </select></p>
 
         <p>Pet: <select id="pet_ID" name="pet_ID">
                 <?php
-                $sql = mysqli_query($connection, "SELECT Pet_ID, Name, Type, Gender FROM Pet WHERE NOT EXISTS ( SELECT * FROM Pet_Customer WHERE Pet_Customer.Pet_ID = Pet.Pet_ID);");
+                $sql = mysqli_query($connection, "SELECT Pet_ID, Name, Type, Gender FROM Pet
+                    WHERE NOT EXISTS ( SELECT * FROM Pet_Customer WHERE Pet_Customer.Pet_ID = Pet.Pet_ID);");
                 while ($row = $sql->fetch_assoc()){
                     echo "<option value='" . $row['Pet_ID'] . "'>" . $row['Name'] . " (" . $row['Type'] . ') '.  $row['Gender'] . "</option>";
                 }
@@ -45,3 +58,6 @@ $q1result = mysqli_query($connection, $sql_of_q1);
 
 <?php if (mysqli_close($connection))echo ""; ?>
 </body>
+
+
+

@@ -38,6 +38,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
             echo "<td>".$r['F_Name']."</td>";
             echo "<td>".$r['L_Name']."</td>";
             echo "<td>".$r['Address']."</td>";
+            echo "<td><a class='button alert' href='deletevolunteer.php?del=".$r["Volunteer_ID"]."'>Delete</a></td>";
 
             echo "</tr>";
         }
