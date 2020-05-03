@@ -90,6 +90,7 @@ $q12esult = mysqli_query($connection, $sql_of_q2);
 <div class="row">
     <div class="tableOutput" style="margin-right: 100px">
         <h3>A list of our Donations can be found here</h3>
+        <p>Please Note: A Donor will not be listed in the table until a donation is made using the table to the right. They will show in the donor dropdown on that table</p>
         <table border="1">
 
 
