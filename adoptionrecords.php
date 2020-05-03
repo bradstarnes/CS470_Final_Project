@@ -33,7 +33,7 @@ $q1result2 = mysqli_query($connection, $sql_of_q2);
         echo "<td>".'Breed'."</td>";
         echo "<td>".'Name'."</td>";
         echo "<td>".'Gender'."</td>";
-        echo "<td>".'Delete Record'."</td>";
+        echo "<td>".'Delete'."</td>";
 
         echo "</tr>";
         while($r = mysqli_fetch_assoc($q1result)) //fetches a result row as an associative array.
@@ -71,7 +71,7 @@ $q1result2 = mysqli_query($connection, $sql_of_q2);
         echo "<td>".'Breed'."</td>";
         echo "<td>".'Name'."</td>";
         echo "<td>".'Gender'."</td>";
-        echo "<td>".'Delete Record'."</td>";
+        echo "<td>".'Delete'."</td>";
 
         echo "</tr>";
         while($r = mysqli_fetch_assoc($q1result2)) //fetches a result row as an associative array.
