@@ -56,7 +56,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
     <form action="newemployee.php" method="post">
         <p>First name: <input type="text" name="f_name" /></p>
         <p>Last name: <input type="text" name="l_name" /></p>
-        <p>SSN: <input type="password" name="ssn" /></p>
+        <p>SSN: <input type="password" name="ssn"  maxlength="9"/></p>
         <p>Address: <input type="text" name="address" /></p>
         <p>Salary: <input type="number" name="salary" /></p>
 

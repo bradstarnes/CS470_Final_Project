@@ -118,7 +118,7 @@ $q12esult = mysqli_query($connection, $sql_of_q2);
     <div class="newdataform">
         <h3>Add a New Donation</h3>
         <form action="newdonation.php" method="post">
-            <p>Donation Date: <input type="text" name="donation_date" /></p>
+            <p>Donation Date: <input type="text" name="donation_date" placeholder="YYYY-MM-DD"/></p>
 
             <p>Donor:<select id="donor_ID" name="donor_ID">
                     <?php

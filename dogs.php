@@ -68,7 +68,7 @@ $q1result = mysqli_query($connection, $sql_of_q1);
                 <option value="Cat" disabled>Cat</option>
             </select></p>
 
-        <p>Date Arrived: <input type="text" name="date" /></p>
+        <p>Date Arrived: <input type="text" name="date" placeholder="YYYY-MM-DD"/></p>
         <p>Image URL: <input type="text" name="image" /></p>
 
         <input type="submit" name="submit" value="Submit" />
